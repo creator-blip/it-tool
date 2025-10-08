@@ -106,6 +106,67 @@ Authentication Page Stylesheet
   margin-top: 1rem;
 }
 
+.input-group > .form-control {
+  flex: 1 1 auto;
+  width: 1%;
+  min-width: 0;
+  border-top-left-radius: 0.5rem;
+  border-bottom-left-radius: 0.5rem;
+}
+
+/* Align the Show/Hide button to same height */
+.input-group .btn {
+  white-space: nowrap;
+  border-top-right-radius: 0.5rem;
+  border-bottom-right-radius: 0.5rem;
+  font-weight: 500;
+  transition: all 0.2s ease-in-out;
+}
+
+/* Prevent double rounding */
+.input-group > .form-control:not(:last-child) {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.input-group > .btn:not(:first-child) {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+/* Blue outline theme (matches your primary color) */
+.btn-outline-primary {
+  color: var(--primary-blue);
+  border-color: var(--primary-blue);
+}
+.btn-outline-primary:hover,
+.btn-outline-primary:focus {
+  color: #fff;
+  background-color: var(--primary-blue);
+  border-color: var(--primary-blue);
+  box-shadow: 0 0 0 .2rem rgba(var(--bs-primary-rgb, 95,134,255), .25);
+}
+.btn-outline-primary:active,
+.btn-outline-primary.active {
+  color: #fff;
+  background-color: var(--primary-blue);
+  border-color: var(--primary-blue);
+  filter: brightness(0.96);
+}
+
+/* Input focus state (Bootstrap-aligned ring) */
+.auth-card .form-control:focus {
+  outline: 0;
+  box-shadow: 0 0 0 .25rem rgba(var(--bs-primary-rgb, 95,134,255), .25);
+}
+
+/* Responsive adjustments for small screens */
+@media (max-width: 576px) {
+  .input-group .btn {
+    font-size: 0.85rem;
+    padding: 0.4rem 0.6rem;
+  }
+}
+
 /* ================================================
 Responsive
 ================================================ */
