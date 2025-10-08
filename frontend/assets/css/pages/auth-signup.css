@@ -1,0 +1,126 @@
+/* ============================================================
+  Sign-Up Page — Continuity with Login (Final)
+  - No color changes to your theme variables
+  - Proper input-group alignment for Show/Hide buttons
+  - Blue button theme (outline) with consistent states
+============================================================ */
+
+/* Headings */
+.auth-title {
+  font-weight: 700;
+  font-size: 1.75rem;
+  color: var(--primary-blue);
+  letter-spacing: 0.3px;
+  line-height: 1.3;
+}
+.auth-subtitle {
+  font-size: 0.9rem;
+  color: var(--dark-gray, #555);
+  font-weight: 500;
+  letter-spacing: 0.2px;
+  opacity: 0.9;
+}
+
+/* Form layout consistency */
+.auth-card .form-label { margin-bottom: 0.4rem; }
+
+.auth-card .form-control,
+.auth-card .form-select {
+  border-radius: 0.5rem;
+  /* Do NOT force width:100% here; let input-group handle sizing */
+}
+
+/* Focus state (Bootstrap-compatible ring using primary color) */
+.auth-card .form-control:focus,
+.auth-card .form-select:focus {
+  outline: 0;
+  /* Prefer Bootstrap var; fallback to a soft blue ring */
+  box-shadow:
+    0 0 0 .25rem rgba(var(--bs-primary-rgb, 95, 134, 255), .25);
+}
+
+/* ------------------------------
+   Input Group (Password fields)
+   Keeps input + button on one line
+------------------------------ */
+.input-group > .form-control {
+  flex: 1 1 auto;
+  width: 1%;
+  min-width: 0;
+  border-top-left-radius: 0.5rem;
+  border-bottom-left-radius: 0.5rem;
+}
+
+.input-group .btn {
+  white-space: nowrap;
+  border-top-right-radius: 0.5rem;
+  border-bottom-right-radius: 0.5rem;
+  font-weight: 500;
+  transition: all 0.2s ease-in-out;
+}
+
+/* Trim inner radii when grouped */
+.input-group > .form-control:not(:last-child) {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.input-group > .btn:not(:first-child) {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+/* Blue outline theme for Show/Hide buttons (no color changes to variables) */
+.btn-outline-primary {
+  color: var(--primary-blue);
+  border-color: var(--primary-blue);
+}
+.btn-outline-primary:hover,
+.btn-outline-primary:focus {
+  color: #fff;
+  background-color: var(--primary-blue);
+  border-color: var(--primary-blue);
+  box-shadow:
+    0 0 0 .2rem rgba(var(--bs-primary-rgb, 95, 134, 255), .25);
+}
+.btn-outline-primary:active,
+.btn-outline-primary.active {
+  color: #fff;
+  background-color: var(--primary-blue);
+  border-color: var(--primary-blue);
+  filter: brightness(0.96);
+}
+
+/* Button keyboard focus consistency for non-primary variants (safety) */
+.input-group .btn:focus {
+  box-shadow:
+    0 0 0 .25rem rgba(108,117,125,.25);
+}
+
+/* Hover/active micro-interactions */
+.input-group .btn:hover { filter: brightness(0.98); }
+.input-group .btn:active { filter: brightness(0.96); }
+
+/* ------------------------------
+   Dial Code (numeric) niceties
+------------------------------ */
+#dialCode {
+  text-align: center;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+/* Hide numeric spinners for cleaner look */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
+input[type=number] { -moz-appearance: textfield; }
+
+/* Button shape consistency with primary submit */
+.auth-card .btn.btn-primary {
+  border-radius: 0.8rem;
+  padding: 0.75rem 1rem;
+}
+
+/* Responsive tweaks */
+@media (max-width: 576px) {
+  .auth-title   { font-size: 1.5rem; }
+  .auth-subtitle{ font-size: 0.85rem; }
+}
