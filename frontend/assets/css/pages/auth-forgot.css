@@ -1,0 +1,36 @@
+/* ================================================
+Forgot Password – small page-only tweaks
+(Colors inherit from theme.css + auth.css)
+================================================ */
+
+.auth-title {
+  font-weight: 700;
+  font-size: 1.75rem;
+  color: var(--primary-blue);
+  letter-spacing: 0.3px;
+  line-height: 1.3;
+}
+
+.auth-subtitle {
+  font-size: 0.9rem;
+  color: var(--dark-gray, #555);
+  font-weight: 500;
+  letter-spacing: 0.2px;
+  opacity: 0.9;
+}
+
+/* Form consistency (same look as Login/Sign-Up) */
+.auth-card .form-label { margin-bottom: 0.45rem; }
+.auth-card .form-control { border-radius: 0.5rem; }
+
+/* Primary button matches your other auth pages */
+.auth-card .btn.btn-primary {
+  border-radius: 0.8rem;
+  padding: 0.75rem 1rem;
+}
+
+/* Responsive */
+@media (max-width: 576px) {
+  .auth-title { font-size: 1.5rem; }
+  .auth-subtitle { font-size: 0.85rem; }
+}
